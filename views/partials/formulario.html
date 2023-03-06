@@ -1,0 +1,41 @@
+
+<section>
+    <div class="registros" id="registros">
+        
+         <div class="labels">
+         <div><label >Nu. Boleto:</label></div>
+         <div><label >Destino:</label></div>
+         
+         <div><label >Cliente:</label></div>
+         
+         <div><label >Edad:</label></div>
+         
+         <div><label >Tipo de viaje:</label></div>
+         
+         <div><label >Precio:</label></div>
+
+         </div>
+
+         <form action="/" method="post" >
+
+         <div class="inputs">
+         <div><input type="number" id="boleto" name="boleto" class="form-control" required="true" value="<%=boleto%>"></div>
+         <div><input type="text" id="destino" name="destino" class="form-control" value="<%=destino%>"></div>
+         <div><input type="text" name="cliente" id="cliente" class="form-control" value="<%=cliente%>"></div>
+         <div><input type="number" id="edad" name="edad" class="form-control" value="<%=edad%>"></div>
+        <div><select name="tipoViaje" id="tipoViaje" class="form-select">
+            <option value="1">Sencillo</option>
+            <option value="2">Redondo</option>
+        </select></div>
+         <div> <input type="number" id="precio" name="precio" class="form-control" required="true" value="<%=precio%>"></div>
+        
+     </div>
+     <hr style="color: white;">
+     <button class="btn btn-primary" style="margin-top: 15px;" type="submit">Enviar</button>
+     <button class="btn btn-primary" style="margin-top: 15px;" onclick=" limpiarCampos();">Limpiar</button>
+    </form>
+     <br>
+     <br>
+     <hr>
+    </section>
+     
