@@ -10,15 +10,15 @@ if(precio!=0){
     var impuesto=0;
     var pagoTotal=0;
 
-if(tipoViaje==1){
-    impuesto= (precio*(16/100));
-}
-else if(tipoViaje==2){
+    if(tipoViaje==1){
+        impuesto= (precio*(16/100));
+    }
+    else if(tipoViaje==2){
 
-    precio=(+precio+(+precio*(80/100)));
-    impuesto= (precio*(16/100));
+        precio=(+precio+(+precio*(80/100)));
+        impuesto= (precio*(16/100));
 
-}
+    }
 
     if(edad>=60){
         pagoTotal=(+precio+(+impuesto)); 

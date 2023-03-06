@@ -16,9 +16,9 @@ app.use((req,res,next)=>{
 })
 
 
-const puerto=501;
+const puerto=500;
 //const ip='34.203.33.75';
     app.listen(puerto, ()=>{
 
-        console.log("Iniciado puerto "+puerto);
+        console.log("Iniciado puerto 500");
     })
