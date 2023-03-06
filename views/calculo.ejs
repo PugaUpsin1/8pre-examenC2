@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<%-include('partials/encabezado.html');%>
+
+<%-include('partials/formulario.html');%>     
+
+<%
+if(precio!=0){
+    var descuento=0;
+    var impuesto=0;
+    var pagoTotal=0;
+
+if(tipoViaje==1){
+    impuesto= (precio*(16/100));
+}
+else if(tipoViaje==2){
+
+    precio=(+precio+(+precio*(80/100)));
+    impuesto= (precio*(16/100));
+
+}
+
+    if(edad>=60){
+        pagoTotal=(+precio+(+impuesto)); 
+        descuento=(precio*(50/100)); 
+    }
+    pagoTotal=(+precio+(+impuesto))-descuento;
+}
+%>
+<section>
+    <center>
+        <div class="res">
+           
+            <div class="labels1">
+                <div class="labels2"><label for="">No. Boleto:</label></div>
+                <div class="labels2"><label for="">Cliente:</label></div>
+                <div class="labels2"><label for="">Edad:</label></div>
+                <div class="labels2"><label for="">Destino:</label></div>
+                <div class="labels2"><label for="">Tipo de Viaje:</label></div>
+                <div class="labels2"><label for="">Precio:</label></div>
+                <div class="labels2"><label for="">Subtotal:</label></div>
+                <div class="labels2"><label for="">I.V.A 16%:</label></div>
+                <div class="labels2"><label for="">Descuento:</label></div>
+                <div class="labels2"><label for="">Total a Pagar:</label></div>
+            </div> 
+            <div class="inpt">
+                <form action="/">
+                    <div><input type="text" value="<%=boleto%>" class="form-control" readonly="true"></div>
+                    <div><input type="text" value="<%=edad%>" class="form-control" readonly="true"> </div>
+                    <div><input type="text" value="<%=destino%>" class="form-control" readonly="true"></div>
+                    <div><input type="text" value="<%=tipoViaje%>" class="form-control" readonly="true"></div>
+                    <div><input type="text" value="$<%=precio%>" class="form-control" readonly="true"></div>
+                    <div><input type="text" value="$<%=precio%>" class="form-control" readonly="true" ></div>
+                    <div><input type="text" value="$<%=impuesto%>" class="form-control" readonly="true"></div>
+                    <div><input type="text" value="$<%=descuento%>" class="form-control" readonly="true"></div>
+                    <div><input type="text" value="$<%=pagoTotal%>" class="form-control" readonly="true"></div>
+                </form>
+            </div>
+        </div>  
+    </center>
+</section>
+<%-include('partials/piedepagina.html');%>
+</body>
+<style>
+*{
+    margin: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(0, 0, 0);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+header{
+    color: white;
+    margin-top: 20px;
+    padding: 1px;
+    background-color: rgba(0, 0, 0, 0.841);
+
+}
+
+.res{
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.lbl{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.inpt{
+    display: flex;
+    flex-direction: column;
+}
+.registros{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+div{
+    margin: 10px;
+}
+input{
+height: 30px;
+width: 300px;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-style: oblique;
+margin-top: 10px;
+}
+
+label{
+    margin-top: 5px;
+    color: white;
+}
+.labels{
+    width: 200px;
+    flex-wrap: wrap;
+}
+.labels1{
+    width: 200px;
+    flex-wrap: wrap;
+}
+.labels2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 28px;
+}
+.labels2 label{
+    height: 15px;
+    margin: 0;
+}
+nav{
+    padding: 2%;
+}
+section{
+    background-color: rgb(0, 0, 0);
+    padding: 20px;
+}
+footer{
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 10px;
+    text-align: center;
+    background-color:black;
+}
+
+</style>
+<script>
+    
+function limpiarCampos() {
+  document.getElementById("boleto").value = "";
+  document.getElementById("destino").value = "";
+  document.getElementById("cliente").value = "";
+  document.getElementById("edad").value = "";
+  document.getElementById("tipoViaje").selectedIndex = 0;
+  document.getElementById("precio").value = "";
+}
+
+</script>
+</html>
+
